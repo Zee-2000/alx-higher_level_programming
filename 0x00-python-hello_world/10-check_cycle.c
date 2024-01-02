@@ -16,7 +16,7 @@ hare = list;
 while (tortoise != NULL && hare != NULL && hare->next != NULL)
 {
 tortoise = tortoise->next;
-hare = hare->next;
+hare = hare->next->next;
 
 if (tortoise == hare)
 {
