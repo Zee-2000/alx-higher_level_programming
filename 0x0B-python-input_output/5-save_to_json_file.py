@@ -2,7 +2,7 @@
 """Defines JSON file-writing function"""
 import json
 
-def save_to_json_file(filename, my_obj):
+def save_to_json_file( my_obj, filename):
     """Writes an object text file using JSON representation"""
     with open(filename, "w") as f:
         return json.dump(my_obj)
