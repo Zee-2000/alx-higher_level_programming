@@ -1,2 +1,2 @@
---Creating my first table
-CREATE TABLE IF NOT EXISTS `first_table`(`id` INT, `name` VARCHAR(256));
+-- a SQL script create first_table
+CREATE TABLE IF NOT EXISTS `first_table` (`id` INT, `name` VARCHAR(256));
