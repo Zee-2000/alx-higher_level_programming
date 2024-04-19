@@ -1,7 +1,7 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
-Lists all cities from database hbtn_0e_4_usa
-(id, state, city) 
+lists all cities from the database hbtn_0e_4_usa
+(id, 'state', city)
 """
 import sys
 import MySQLdb
@@ -11,12 +11,12 @@ if __name__ == '__main__':
     passwd = sys.argv[2]
     db_name = sys.argv[3]
     db = MySQLdb.connect(user=user, passwd=passwd, db=db_name, port=3306)
-    
+
     cur = db.cursor()
-    query = "SELCET cities.id, cities.name,states.name FROM states \
-        , cities WHERE states_id = cities.state_id;"
+    query = "SELECT cities.id, cities.name, states.name FROM states \
+        , cities WHERE states.id = cities.state_id;"
     cur.execute(query)
     cities = cur.fetchall()
-    
+
     for city in cities:
         print(city)
