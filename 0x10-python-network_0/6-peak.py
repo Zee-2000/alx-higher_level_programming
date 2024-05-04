@@ -18,4 +18,4 @@ def find_peak(list_of_integers):
             #peak is left
             right = middle
             
-    return list_of_integers[left]
+    return list_of_integers[middle]
