@@ -8,8 +8,8 @@ def find_peak(list_of_integers):
     left = 0
     right = len(list_of_integers-1)
     
-    while left < right:
-        middle = +(left(left + right) // 2)
+    while left <= right:
+        middle = (left +(right - left) // 2)
 
         if middle > 0 and list_of_integers[middle] < list_of_integers[middle - 1]:
             right = middle - 1
