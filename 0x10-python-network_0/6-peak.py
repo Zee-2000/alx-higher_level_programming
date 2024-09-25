@@ -1,20 +1,16 @@
 #!/usr/bin/python3
-"""Finding apeak in list of integers"""
+"""Finds a peak in a list of unsorted integers"""
 
-def find_peak(list_of_integers):
-    if not list_of_integers:
-        return None
 
-    left = 0
-    right = len(list_of_integers-1)
-    
-    while left <= right:
-        middle = (left +(right - left) // 2)
+def find_peak(nums):
+    """Finds a peak in nums"""
 
-        if middle > 0 and list_of_integers[middle] < list_of_integers[middle - 1]:
-            right = middle - 1
-        elif middle < len(list_of_integers) - 1 and list_of_integers[middle] < list_of_integers[middle + 1]:
-            left = middle + 1
+    s, e = 0, len(nums) - 1
+    while s <= e:
+        m = s + ((e - s) // 2)
+        if m > 0 and nums[m] < nums[m - 1]:
+            e = m - 1
+        elif m < len(nums) - 1 and nums[m] < nums[m + 1]:
+            s = m + 1
         else:
-            return list_of_integers[middle]
-         
+            return nums[m]
